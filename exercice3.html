@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Quiz Interactif</h1>
+    <button onclick="lancerQuiz()">Démarrer le Quiz</button> 
+</body>
+<script>
+    // 1. Préparer les questions
+const QUESTIONS = [
+["Quelle est la capitale de la France ?", "Paris"],
+["Quel est le plus grand pays du monde ?", "Russie"],
+["Combien font 2 + 2 ?", "4"],
+["Quel est le nom de la monnaie japonaise ?", "Yen"],
+["Combien de continents y a-t-il sur Terre ?","7"],
+["Qui a écrit 'Les Misérables' ?","Victor Hugo"],
+["Quelle est la couleur du ciel par beau temps ?", "Bleu"],
+];
+
+// 2. Interroger l'utilisateur
+function lancerQuiz() {
+let score = 0; // Initialise le score
+
+for (let i = 0; i < QUESTIONS.length; i++) {
+const question = QUESTIONS[i][0];
+const reponseCorrecte = QUESTIONS[i][1];
+
+const reponseUtilisateur = prompt(question);  // Affiche la question et récupère la réponse
+
+// 3. Vérification des réponses
+if (reponseUtilisateur && reponseUtilisateur.toLowerCase() === reponseCorrecte.toLowerCase()) {
+  // Vérifie si la réponse n'est pas nulle et si elle correspond (insensible à la casse)
+  score++;
+  alert("Réponse juste");
+} else {
+  alert("Réponse fausse. La réponse était : " + reponseCorrecte);
+}
+}
+
+// 4. Résultats de l'évaluation
+alert("Vous avez répondu correctement à " + score + " questions sur " + QUESTIONS.length);
+}
+</script>
+</html>

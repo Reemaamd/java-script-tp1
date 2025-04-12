@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+          font-size: 48px;       /* police très large */
+          color: hotpink;        /* rose vif */
+        }
+    
+        p {
+          font-size: 24px;       /* texte agrandi */
+          color: deeppink;       /* autre ton de rose */
+        }
+      </style>
+</head>
+<body>
+    
+  <h1>Exercice 1 JavaScript</h1>
+  <p>Ouvre la console pour voir les résultats (clic droit → Inspecter → Console).</p>
+</body>
+<script>
+    let number1 = prompt("svp veuillez saisir le premier nombre ");
+    console.log("l'utilisateur a enter : "+number1)
+    let number2 = prompt("svp veuillez saisir le deuxieme nombre ")
+    console.log("l'utilisateur a entrer :"+number2)
+      // Convertir les entrées en nombres
+  number1 = parseFloat(number1);
+  number2 = parseFloat(number2);
+    console.log("la somme du deux nomberes est "+ (number1 + number2) )
+    console.log("la difference du deux nomberes est "+ (number1 - number2) )
+    console.log("le produit du deux nomberes est "+ (number1 * number2) )
+    console.log("le quotient du deux nomberes est "+ (number1 / number2) )
+    
+</script>
+</html>

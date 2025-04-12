@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+          font-size: 48px;       /* police très large */
+          color: hotpink;        /* rose vif */
+        }
+    
+        p {
+          font-size: 24px;       /* texte agrandi */
+          color: deeppink;       /* autre ton de rose */
+        }
+      </style>
+</head>
+<body>
+   <h1>Exercice 1 JavaScript</h1>
+  <p>Ouvre la console pour voir les résultats (clic droit → Inspecter → Console).</p>
+</body>
+<script>
+    // Générer un nombre aléatoire entre 1 et 10
+let nombreÀDeviner = Math.floor(Math.random() * 10) + 1;
+let tentatives = 0;
+let propositionUtilisateur = 0;
+
+// Boucle pour permettre à l'utilisateur de deviner le nombre
+while (propositionUtilisateur !== nombreÀDeviner) {
+  // Demander à l'utilisateur de faire une proposition
+  propositionUtilisateur = parseInt(prompt("Devinez un nombre entre 1 et 10 :"));
+  
+  // Vérifier si la proposition est valide
+  if (propositionUtilisateur < 1 || propositionUtilisateur > 10 || isNaN(propositionUtilisateur)) {
+    alert("Veuillez entrer un nombre valide entre 1 et 10.");
+    continue;
+  }
+
+  // Incrémenter le nombre de tentatives
+  tentatives++;
+
+  // Vérifier si la proposition est correcte
+  if (propositionUtilisateur < nombreÀDeviner) {
+    alert("Le nombre à deviner est plus grand !");
+  } else if (propositionUtilisateur > nombreÀDeviner) {
+    alert("Le nombre à deviner est plus petit !");
+  }
+}
+
+// Afficher le score (nombre de tentatives)
+alert(`Félicitations ! Vous avez trouvé le nombre en ${tentatives} tentatives.`);
+
+
+</script>
+</html>
